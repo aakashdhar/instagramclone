@@ -3,6 +3,7 @@
 body{
   background-color: #bdc3c7;
   font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 16px;
 }
 h1{
   font-family: 'Pacifico', cursive;
@@ -20,6 +21,13 @@ h1{
 	height: 100vh;
 	width: 100%;
 }
+.sidebar{
+  border-right: 2px dashed #000;
+}
 .form-box{
   background-color: rgba(255, 255, 255, 0.4);;
+}
+.profiledetails{
+  font-size: 18px;
+  margin-top: 15px;
 }
