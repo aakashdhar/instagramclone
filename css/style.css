@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body{
+  background-color: #bdc3c7;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+h1{
+  font-family: 'Pacifico', cursive;
+	font-size: 40px;
+	color: #fff;
+	text-transform: capitalize;;
+	font-weight: 500;
+	word-spacing: .5px;
+	letter-spacing: 5px;
+  margin-bottom:10px;
+}
+.overlay{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(images/cover.jpg);
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+.form-box{
+  background-color: rgba(255, 255, 255, 0.4);;
+}
