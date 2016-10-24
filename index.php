@@ -20,7 +20,7 @@
         <div class="col-md-4">
           <div class="row">
             <div class="col-md-12 form-box">
-                <form class="" action="_logincheck" method="post">
+                <form class="" action="_logincheck.php" method="post">
                   <div class="text-center">
                     <h2>Login</h2>
                   </div>
@@ -30,11 +30,14 @@
                   </div>
                   <div class="form-group">
                     <!-- <label for="Password" class="control-label">Username</label> -->
-                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter your Password" required>
+                    <input type="password" class="form-control" id="Password" name="password" placeholder="Enter your Password" required>
                   </div>
                   <div class="form-group">
-                    <input type="submit" class="form-control btn btn-primary" value="login to instagram" id="username" name="submit">
+                    <input type="submit" class="form-control btn btn-primary" value="login to instagram" id="username" name="login">
                   </div>
+                  <?php if (isset($_GET['error'])): ?>
+                    <p class="text-center text-danger bg-danger"><?= $_GET['error']; ?></p>
+                  <?php endif; ?>
                 </form>
             </div>
           </div><br><br>
@@ -58,10 +61,10 @@
                   </div>
                   <div class="form-group">
                     <!-- <label for="Password" class="control-label">Username</label> -->
-                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter your Password" required>
+                    <input type="password" class="form-control" id="Password" name="password" placeholder="Enter your Password" required>
                   </div>
                   <div class="form-group">
-                    <input type="submit" class="form-control btn btn-success" value="Register to instagram" id="username" name="submit">
+                    <input type="submit" class="form-control btn btn-success" value="Register to instagram" id="username" name="register">
                   </div>
                 </form>
               </div>
