@@ -9,7 +9,10 @@
     $sql = "SELECT * FROM `users` WHERE `user_id` = '$id'";
     $result = mysqli_query($con,$sql);
   ?>
-
+  <?php
+    $sql1 = "SELECT * FROM `posts` WHERE `user_id` = '$id'";
+    $result1 = mysqli_query($con,$sql1);
+  ?>
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -37,58 +40,21 @@
           </div>
         </div>
       <?php endwhile; ?>
-        <div class="row,masonry-container">
-          <div class="text-center">
-            <h3>Your Uploaded Insta's</h3>
-          </div><br>
-          <div class="col-sm-6 col-md-4 item">
+        <div class="text-center">
+          <h3>Your Uploaded Insta's</h3>
+        </div><br>
+        <div class="row masonry-container">
+          <?php while($row1 = mysqli_fetch_object($result1)): ?>
+          <div class="col-sm-6 col-md-6 item">
             <div class="thumbnail">
-              <img src="css/images/cover.jpg" alt="...">
+              <a href="viewpic.php?id=<?= $row1 -> post_id; ?>"><img src="<?= $row1 -> image_url; ?>" alt=""></a>
               <div class="caption">
-                <h4 class="text-center text-primary">Thumbnail label</h4>
+                <h4 class="text-center text-primary"><?= $row1 -> title ?></h4>
+                <p><?=$row1 -> description; ?></p>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4 item">
-            <div class="thumbnail">
-              <a href="#"><img src="css/images/cover.jpg" alt="..."></a>
-              <div class="caption">
-                <h4 class="text-center text-primary">Thumbnail label</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <div class="thumbnail">
-              <img src="css/images/cover.jpg" alt="...">
-              <div class="caption">
-                <h4 class="text-center text-primary">Thumbnail label</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <div class="thumbnail">
-              <img src="css/images/cover.jpg" alt="...">
-              <div class="caption">
-                <h4 class="text-center">Thumbnail label</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <div class="thumbnail">
-              <img src="css/images/cover.jpg" alt="...">
-              <div class="caption">
-                <h4 class="text-center text-primary">Thumbnail label</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 item">
-            <div class="thumbnail">
-              <img src="css/images/cover.jpg" alt="...">
-              <div class="caption">
-                <h4 class="text-center text-primary">Thumbnail label</h4>
-              </div>
-            </div>
-          </div>
+        <?php endwhile; ?>
         </div>
       </div>
     </div>

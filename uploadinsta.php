@@ -24,7 +24,7 @@
                   <textarea class="form-control" id="description" name="description" placeholder="Enter Description of your Insta pic" rows="8" cols="40"></textarea>
                 </div>
                 .<div class="form-group">
-                  <input type="submit" class="form-control btn btn-success" id="submit" name="submit" value="Gram it!!!">
+                  <input type="submit" class="form-control btn btn-success" id="submit" name="upload" value="Gram it!!!">
                 </div>
             </form>
           </div>
