@@ -1,4 +1,5 @@
 <?php include 'includes/header.php'; ?>
+<?php $username = $_SESSION['username']; ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,7 +34,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="uploadinsta.php">Gram it!!</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wolfenstein <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $username; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="profile.php">My profile</a></li>
             <li><a href="#">Another action</a></li>

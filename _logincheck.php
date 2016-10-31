@@ -21,6 +21,7 @@
 
     $_SESSION['userid'] = $user->user_id;
     $_SESSION['name'] = $user->fullname;
+    $_SESSION['username'] = $user->username;
     header('Location: profile.php');
   }
 ?>

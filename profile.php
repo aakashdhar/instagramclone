@@ -6,6 +6,7 @@
 </style>
   <?php
     $id  = $_SESSION['userid'];
+    $visitid = $_REQUEST['id'];
     $sql = "SELECT * FROM `users` WHERE `user_id` = '$id'";
     $result = mysqli_query($con,$sql);
   ?>
@@ -26,7 +27,14 @@
           <div class="col-md-8">
             <div class="col-md-12">
               <div class="col-md-6"><h2><?= $row -> username;?></h2></div>
-              <div class="col-md-5"><h3><a href="editprofile.php?id=<?= $row -> user_id; ?>"class="btn btn-primary">Edit Profile</a></h3></div>
+              <div class="col-md-5">
+                <h3>
+                  <a href="editprofile.php?id=<?= $row -> user_id; ?>"class="btn btn-primary">Edit Profile</a>
+                  <!-- <?php //if (isset($visitid)): ?> -->
+                    <a href="#" class="btn btn-success">Follow</a>
+                  <!-- <?php //endif; ?> -->
+                </h3>
+              </div>
               <div class="row">
                 <div class="col-md-3"><p class="profiledetails"><b>208</b> Posts</p></div>
                 <div class="col-md-4"><p class="profiledetails"><b>160</b> Followers</p></div>
@@ -47,7 +55,7 @@
           <?php while($row1 = mysqli_fetch_object($result1)): ?>
           <div class="col-sm-6 col-md-6 item">
             <div class="thumbnail">
-              <a href="viewpic.php?id=<?= $row1 -> post_id; ?>"><img src="<?= $row1 -> image_url; ?>" alt=""></a>
+              <a href="viewpic.php?id=<?= $row1 -> post_id; ?>" target="_blank"><img src="<?= $row1 -> image_url; ?>" alt=""></a>
               <div class="caption">
                 <h4 class="text-center text-primary"><?= $row1 -> title ?></h4>
                 <p><?=$row1 -> description; ?></p>
